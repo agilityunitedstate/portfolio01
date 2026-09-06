@@ -1,298 +1,1702 @@
 /* =========================================================
-   AGILITY UNITED
-   GLOBAL STYLE
+AGILITY UNITED
+MAIN STYLE.CSS
 ========================================================= */
 
-
 /* =========================================================
-   GOOGLE FONT
+GOOGLE FONTS
 ========================================================= */
 
 @import url(
-    'https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap'
+'https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap'
 );
 
-
 /* =========================================================
-   ROOT
+ROOT
 ========================================================= */
 
 :root {
 
-    --orange:
-        #ff6b00;
+```
+--orange:
+    #ff6b00;
 
-    --orange-light:
-        #ff8a3d;
+--orange-light:
+    #ff8a3d;
 
-    --black:
-        #080808;
+--orange-dark:
+    #c95000;
 
-    --black-light:
-        #101010;
+--black:
+    #080808;
 
-    --dark:
-        #151515;
+--black-soft:
+    #0d0d0d;
 
-    --gray:
-        #777777;
+--dark:
+    #101010;
 
-    --light-gray:
-        #aaaaaa;
+--dark-card:
+    #151515;
 
-    --white:
-        #ffffff;
+--gray:
+    #666666;
+
+--light-gray:
+    #999999;
+
+--white:
+    #ffffff;
+```
 
 }
 
-
 /* =========================================================
-   RESET
+RESET
 ========================================================= */
 
 * {
 
-    margin:
-        0;
+  margin:
+  0;
 
-    padding:
-        0;
+  padding:
+  0;
 
-    box-sizing:
-        border-box;
+  box-sizing:
+  border-box;
 
 }
-
 
 html {
 
-    scroll-behavior:
-        smooth;
+```
+scroll-behavior:
+    smooth;
+```
 
 }
-
 
 body {
 
-    background:
-        var(--black);
+```
+background:
+    var(--black);
 
-    color:
-        var(--white);
+color:
+    var(--white);
 
-    font-family:
-        "Work Sans",
-        sans-serif;
+font-family:
+    "Work Sans",
+    sans-serif;
 
-    overflow-x:
-        hidden;
+overflow-x:
+    hidden;
+```
 
 }
-
-
-/* =========================================================
-   LINKS
-========================================================= */
 
 a {
 
-    color:
-        inherit;
+```
+color:
+    inherit;
 
-    text-decoration:
-        none;
+text-decoration:
+    none;
+```
 
 }
 
+img {
+
+```
+max-width:
+    100%;
+
+display:
+    block;
+```
+
+}
 
 /* =========================================================
-   HOME HERO
+NAVBAR
+========================================================= */
+
+.navbar {
+
+```
+position:
+    fixed;
+
+top:
+    0;
+
+left:
+    0;
+
+width:
+    100%;
+
+z-index:
+    1000;
+
+background:
+    rgba(
+        8,
+        8,
+        8,
+        0.75
+    );
+
+border-bottom:
+    1px solid
+    rgba(
+        255,
+        255,
+        255,
+        0.05
+    );
+
+backdrop-filter:
+    blur(12px);
+
+transition:
+    background
+    0.3s ease,
+    border-color
+    0.3s ease;
+```
+
+}
+
+.navbar.scrolled {
+
+```
+background:
+    rgba(
+        8,
+        8,
+        8,
+        0.96
+    );
+
+border-color:
+    rgba(
+        255,
+        107,
+        0,
+        0.2
+    );
+```
+
+}
+
+.nav-container {
+
+```
+width:
+    min(
+        1200px,
+        calc(100% - 50px)
+    );
+
+height:
+    75px;
+
+margin:
+    auto;
+
+display:
+    flex;
+
+align-items:
+    center;
+
+justify-content:
+    space-between;
+```
+
+}
+
+/* =========================================================
+NAV BRAND
+========================================================= */
+
+.nav-brand {
+
+```
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    7px;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    14px;
+
+font-weight:
+    900;
+
+letter-spacing:
+    1px;
+```
+
+}
+
+.nav-brand span {
+
+```
+color:
+    var(--white);
+```
+
+}
+
+.nav-brand strong {
+
+```
+color:
+    var(--orange);
+```
+
+}
+
+/* =========================================================
+NAV MENU
+========================================================= */
+
+.nav-menu {
+
+```
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    28px;
+```
+
+}
+
+.nav-menu a {
+
+```
+position:
+    relative;
+
+color:
+    #888;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    9px;
+
+font-weight:
+    700;
+
+letter-spacing:
+    1.5px;
+
+transition:
+    color
+    0.3s ease;
+```
+
+}
+
+.nav-menu a::after {
+
+```
+content:
+    "";
+
+position:
+    absolute;
+
+left:
+    0;
+
+bottom:
+    -8px;
+
+width:
+    0;
+
+height:
+    1px;
+
+background:
+    var(--orange);
+
+transition:
+    width
+    0.3s ease;
+```
+
+}
+
+.nav-menu a:hover {
+
+```
+color:
+    var(--white);
+```
+
+}
+
+.nav-menu a:hover::after {
+
+```
+width:
+    100%;
+```
+
+}
+
+/* =========================================================
+MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+
+```
+display:
+    none;
+
+width:
+    40px;
+
+height:
+    40px;
+
+background:
+    transparent;
+
+border:
+    none;
+
+cursor:
+    pointer;
+```
+
+}
+
+.menu-toggle span {
+
+```
+display:
+    block;
+
+width:
+    23px;
+
+height:
+    2px;
+
+margin:
+    5px auto;
+
+background:
+    var(--white);
+
+transition:
+    all
+    0.3s ease;
+```
+
+}
+
+.menu-toggle.active span:nth-child(1) {
+
+```
+transform:
+    translateY(7px)
+    rotate(45deg);
+```
+
+}
+
+.menu-toggle.active span:nth-child(2) {
+
+```
+opacity:
+    0;
+```
+
+}
+
+.menu-toggle.active span:nth-child(3) {
+
+```
+transform:
+    translateY(-7px)
+    rotate(-45deg);
+```
+
+}
+
+/* =========================================================
+HOME HERO
 ========================================================= */
 
 .home-hero {
 
-    position:
-        relative;
+```
+position:
+    relative;
 
-    min-height:
-        100vh;
+min-height:
+    100vh;
 
-    width:
-        100%;
+width:
+    100%;
 
-    display:
-        flex;
+display:
+    flex;
 
-    align-items:
-        center;
+align-items:
+    center;
 
-    justify-content:
-        center;
+justify-content:
+    center;
 
-    overflow:
-        hidden;
+overflow:
+    hidden;
 
-    background:
-        #080808;
+background:
+    var(--black);
+```
 
 }
 
-
 /* =========================================================
-   BACKGROUND
+HOME BACKGROUND
 ========================================================= */
 
-.home-bg {
+.home-background {
 
-    position:
-        absolute;
+```
+position:
+    absolute;
 
-    inset:
-        0;
+inset:
+    0;
 
-    z-index:
-        0;
+background:
 
-    background:
-
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(
-                255,
-                107,
-                0,
-                0.16
-            ),
-            transparent 28%
+    radial-gradient(
+        circle at 50% 40%,
+        rgba(
+            255,
+            107,
+            0,
+            0.18
         ),
+        transparent 25%
+    ),
 
-        radial-gradient(
-            circle at 50% 60%,
-            rgba(
-                255,
-                107,
-                0,
-                0.05
-            ),
-            transparent 45%
+    radial-gradient(
+        circle at 50% 65%,
+        rgba(
+            255,
+            107,
+            0,
+            0.06
         ),
+        transparent 45%
+    ),
 
-        #080808;
+    #080808;
+```
 
 }
 
-
 /* =========================================================
-   GRID EFFECT
+GRID BACKGROUND
 ========================================================= */
 
 .home-hero::before {
 
-    content:
-        "";
+```
+content:
+    "";
 
-    position:
-        absolute;
+position:
+    absolute;
 
-    inset:
-        0;
+inset:
+    0;
 
-    background-image:
+background-image:
 
-        linear-gradient(
-            rgba(
-                255,
-                255,
-                255,
-                0.025
-            ) 1px,
-            transparent 1px
-        ),
+    linear-gradient(
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        ) 1px,
+        transparent 1px
+    ),
 
-        linear-gradient(
-            90deg,
-            rgba(
-                255,
-                255,
-                255,
-                0.025
-            ) 1px,
-            transparent 1px
-        );
+    linear-gradient(
+        90deg,
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        ) 1px,
+        transparent 1px
+    );
 
-    background-size:
-        55px 55px;
+background-size:
+    55px 55px;
 
-    opacity:
-        0.7;
+opacity:
+    0.75;
 
-    pointer-events:
-        none;
+pointer-events:
+    none;
+```
 
 }
 
-
 /* =========================================================
-   TOP ORANGE LINE
+ORANGE CENTER LINE
 ========================================================= */
 
 .home-hero::after {
 
-    content:
-        "";
+```
+content:
+    "";
+
+position:
+    absolute;
+
+top:
+    0;
+
+left:
+    50%;
+
+width:
+    1px;
+
+height:
+    160px;
+
+transform:
+    translateX(-50%);
+
+background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        var(--orange),
+        transparent
+    );
+
+opacity:
+    0.7;
+```
+
+}
+
+/* =========================================================
+HOME CONTENT
+========================================================= */
+
+.home-content {
+
+```
+position:
+    relative;
+
+z-index:
+    5;
+
+width:
+    100%;
+
+max-width:
+    900px;
+
+padding:
+    100px 25px 80px;
+
+display:
+    flex;
+
+flex-direction:
+    column;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+text-align:
+    center;
+```
+
+}
+
+/* =========================================================
+LOGO WRAPPER
+========================================================= */
+
+.home-logo-wrapper {
+
+```
+position:
+    relative;
+
+width:
+    190px;
+
+height:
+    190px;
+
+display:
+    flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+margin-bottom:
+    30px;
+```
+
+}
+
+/* =========================================================
+LOGO GLOW
+========================================================= */
+
+.home-logo-wrapper::before {
+
+```
+content:
+    "";
+
+position:
+    absolute;
+
+width:
+    150%;
+
+height:
+    150%;
+
+border-radius:
+    50%;
+
+background:
+    radial-gradient(
+        circle,
+        rgba(
+            255,
+            107,
+            0,
+            0.20
+        ),
+        transparent 65%
+    );
+
+filter:
+    blur(20px);
+
+z-index:
+    -1;
+```
+
+}
+
+/* =========================================================
+HOME LOGO
+========================================================= */
+
+.home-logo {
+
+```
+width:
+    100%;
+
+height:
+    100%;
+
+object-fit:
+    contain;
+
+animation:
+    logoFloat
+    4s
+    ease-in-out
+    infinite;
+```
+
+}
+
+/* =========================================================
+LOGO ANIMATION
+========================================================= */
+
+@keyframes logoFloat {
+
+```
+0% {
+
+    transform:
+        translateY(0);
+
+}
+
+
+50% {
+
+    transform:
+        translateY(-10px);
+
+}
+
+
+100% {
+
+    transform:
+        translateY(0);
+
+}
+```
+
+}
+
+/* =========================================================
+HOME TITLE
+========================================================= */
+
+.home-title {
+
+```
+max-width:
+    850px;
+
+margin:
+    0;
+
+font-family:
+    "Anton",
+    sans-serif;
+
+font-size:
+    clamp(
+        60px,
+        10vw,
+        120px
+    );
+
+font-weight:
+    400;
+
+letter-spacing:
+    4px;
+
+line-height:
+    0.9;
+
+text-transform:
+    uppercase;
+
+color:
+    var(--white);
+```
+
+}
+
+.home-title span {
+
+```
+color:
+    var(--orange);
+```
+
+}
+
+/* =========================================================
+SLOGAN
+========================================================= */
+
+.home-slogan {
+
+```
+margin:
+    25px 0 35px;
+
+color:
+    #888;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    11px;
+
+font-weight:
+    700;
+
+letter-spacing:
+    3px;
+
+line-height:
+    1.8;
+```
+
+}
+
+/* =========================================================
+EXPLORE BUTTON
+========================================================= */
+
+.explore-button {
+
+```
+position:
+    relative;
+
+min-height:
+    55px;
+
+padding:
+    0 30px;
+
+display:
+    inline-flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+gap:
+    14px;
+
+overflow:
+    hidden;
+
+background:
+    var(--orange);
+
+border:
+    1px solid
+    var(--orange);
+
+color:
+    #080808;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    10px;
+
+font-weight:
+    800;
+
+letter-spacing:
+    1.5px;
+
+cursor:
+    pointer;
+
+transition:
+    transform
+    0.3s ease,
+    box-shadow
+    0.3s ease,
+    border-color
+    0.3s ease;
+```
+
+}
+
+.explore-button::before {
+
+```
+content:
+    "";
+
+position:
+    absolute;
+
+inset:
+    0;
+
+background:
+    var(--white);
+
+transform:
+    translateX(-101%);
+
+transition:
+    transform
+    0.35s ease;
+```
+
+}
+
+.explore-button span,
+.explore-button i {
+
+```
+position:
+    relative;
+
+z-index:
+    2;
+```
+
+}
+
+.explore-button:hover::before {
+
+```
+transform:
+    translateX(0);
+```
+
+}
+
+.explore-button:hover {
+
+```
+transform:
+    translateY(-4px);
+
+border-color:
+    var(--white);
+
+box-shadow:
+    0 15px 40px
+    rgba(
+        255,
+        107,
+        0,
+        0.3
+    );
+```
+
+}
+
+.explore-button i {
+
+```
+transition:
+    transform
+    0.3s ease;
+```
+
+}
+
+.explore-button:hover i {
+
+```
+transform:
+    translateY(3px);
+```
+
+}
+
+/* =========================================================
+ABOUT SECTION
+========================================================= */
+
+.about-section {
+
+```
+position:
+    relative;
+
+padding:
+    130px 25px;
+
+background:
+    var(--black-soft);
+
+border-top:
+    1px solid
+    #191919;
+
+overflow:
+    hidden;
+```
+
+}
+
+/* =========================================================
+ABOUT BACKGROUND TEXT
+========================================================= */
+
+.about-section::after {
+
+```
+content:
+    "AGILITY";
+
+position:
+    absolute;
+
+right:
+    -40px;
+
+bottom:
+    -80px;
+
+color:
+    rgba(
+        255,
+        255,
+        255,
+        0.015
+    );
+
+font-family:
+    "Anton",
+    sans-serif;
+
+font-size:
+    220px;
+
+pointer-events:
+    none;
+```
+
+}
+
+/* =========================================================
+ABOUT CONTAINER
+========================================================= */
+
+.about-container {
+
+```
+position:
+    relative;
+
+z-index:
+    2;
+
+width:
+    min(
+        1150px,
+        100%
+    );
+
+margin:
+    auto;
+```
+
+}
+
+/* =========================================================
+ABOUT LABEL
+========================================================= */
+
+.about-label {
+
+```
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    12px;
+
+margin-bottom:
+    28px;
+
+color:
+    var(--orange);
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    10px;
+
+font-weight:
+    800;
+
+letter-spacing:
+    3px;
+```
+
+}
+
+.about-label span {
+
+```
+width:
+    45px;
+
+height:
+    2px;
+
+background:
+    var(--orange);
+```
+
+}
+
+/* =========================================================
+ABOUT GRID
+========================================================= */
+
+.about-grid {
+
+```
+display:
+    grid;
+
+grid-template-columns:
+    1fr
+    1fr;
+
+gap:
+    100px;
+
+align-items:
+    start;
+```
+
+}
+
+/* =========================================================
+ABOUT TITLE
+========================================================= */
+
+.about-title h2 {
+
+```
+margin:
+    0;
+
+font-family:
+    "Anton",
+    sans-serif;
+
+font-size:
+    clamp(
+        60px,
+        7vw,
+        100px
+    );
+
+font-weight:
+    400;
+
+line-height:
+    0.9;
+
+letter-spacing:
+    2px;
+```
+
+}
+
+.about-title h2 span {
+
+```
+display:
+    block;
+
+color:
+    var(--orange);
+```
+
+}
+
+/* =========================================================
+ABOUT CONTENT
+========================================================= */
+
+.about-content {
+
+```
+padding-top:
+    10px;
+```
+
+}
+
+.about-content p {
+
+```
+margin-bottom:
+    22px;
+
+color:
+    #777;
+
+font-size:
+    15px;
+
+line-height:
+    1.9;
+```
+
+}
+
+.about-content .about-main-text {
+
+```
+padding-left:
+    22px;
+
+border-left:
+    2px solid
+    var(--orange);
+
+color:
+    #aaa;
+```
+
+}
+
+/* =========================================================
+ABOUT VALUES
+========================================================= */
+
+.about-values {
+
+```
+display:
+    grid;
+
+grid-template-columns:
+    repeat(
+        3,
+        1fr
+    );
+
+gap:
+    25px;
+
+margin-top:
+    90px;
+
+padding-top:
+    40px;
+
+border-top:
+    1px solid
+    #222;
+```
+
+}
+
+/* =========================================================
+ABOUT VALUE
+========================================================= */
+
+.about-value {
+
+```
+position:
+    relative;
+
+padding:
+    25px;
+
+background:
+    #111;
+
+border:
+    1px solid
+    #242424;
+
+transition:
+    transform
+    0.3s ease,
+    border-color
+    0.3s ease;
+```
+
+}
+
+.about-value:hover {
+
+```
+transform:
+    translateY(-6px);
+
+border-color:
+    rgba(
+        255,
+        107,
+        0,
+        0.5
+    );
+```
+
+}
+
+.about-value > span {
+
+```
+display:
+    block;
+
+margin-bottom:
+    30px;
+
+color:
+    var(--orange);
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    10px;
+
+font-weight:
+    800;
+
+letter-spacing:
+    2px;
+```
+
+}
+
+.about-value h3 {
+
+```
+margin-bottom:
+    12px;
+
+color:
+    var(--white);
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    15px;
+
+letter-spacing:
+    1px;
+```
+
+}
+
+.about-value p {
+
+```
+color:
+    #666;
+
+font-size:
+    12px;
+
+line-height:
+    1.8;
+```
+
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.footer {
+
+```
+padding:
+    70px 25px 25px;
+
+background:
+    #080808;
+
+border-top:
+    1px solid
+    #1b1b1b;
+```
+
+}
+
+.footer-container {
+
+```
+width:
+    min(
+        1150px,
+        100%
+    );
+
+margin:
+    auto;
+```
+
+}
+
+/* =========================================================
+FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+
+```
+display:
+    flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+gap:
+    18px;
+
+padding-bottom:
+    50px;
+```
+
+}
+
+.footer-brand img {
+
+```
+width:
+    65px;
+
+height:
+    65px;
+
+object-fit:
+    contain;
+```
+
+}
+
+.footer-brand h3 {
+
+```
+margin:
+    0 0 8px;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    16px;
+
+letter-spacing:
+    1px;
+```
+
+}
+
+.footer-brand h3 span {
+
+```
+color:
+    var(--orange);
+```
+
+}
+
+.footer-brand p {
+
+```
+color:
+    #555;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    8px;
+
+font-weight:
+    700;
+
+letter-spacing:
+    1.5px;
+```
+
+}
+
+/* =========================================================
+FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+```
+padding-top:
+    25px;
+
+border-top:
+    1px solid
+    #181818;
+
+text-align:
+    center;
+```
+
+}
+
+.footer-bottom p {
+
+```
+color:
+    #444;
+
+font-family:
+    "Orbitron",
+    sans-serif;
+
+font-size:
+    8px;
+
+letter-spacing:
+    1px;
+```
+
+}
+
+/* =========================================================
+RESPONSIVE TABLET
+========================================================= */
+
+@media (
+max-width: 900px
+) {
+
+```
+.nav-menu {
+
+    gap:
+        18px;
+
+}
+
+
+.about-grid {
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        45px;
+
+}
+
+
+.about-values {
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+}
+
+
+.about-section {
+
+    padding:
+        100px 25px;
+
+}
+```
+
+}
+
+/* =========================================================
+RESPONSIVE MOBILE
+========================================================= */
+
+@media (
+max-width: 700px
+) {
+
+```
+/* NAVBAR */
+
+.nav-container {
+
+    width:
+        calc(
+            100% - 40px
+        );
+
+    height:
+        65px;
+
+}
+
+
+.nav-brand {
+
+    font-size:
+        11px;
+
+}
+
+
+.menu-toggle {
+
+    display:
+        block;
+
+}
+
+
+.nav-menu {
 
     position:
         absolute;
 
     top:
-        0;
+        65px;
 
     left:
-        50%;
-
-    transform:
-        translateX(-50%);
-
-    width:
-        1px;
-
-    height:
-        180px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--orange),
-            transparent
-        );
-
-    opacity:
-        0.7;
-
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.home-content {
-
-    position:
-        relative;
-
-    z-index:
-        2;
+        0;
 
     width:
         100%;
 
-    max-width:
-        900px;
-
     padding:
-        80px 25px;
+        25px;
 
     display:
         flex;
@@ -303,821 +1707,263 @@ a {
     align-items:
         center;
 
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-}
-
-
-/* =========================================================
-   LOGO WRAPPER
-========================================================= */
-
-.home-logo-wrapper {
-
-    width:
-        180px;
-
-    height:
-        180px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    margin-bottom:
-        35px;
-
-    position:
-        relative;
-
-}
-
-
-/* =========================================================
-   LOGO GLOW
-========================================================= */
-
-.home-logo-wrapper::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        130%;
-
-    height:
-        130%;
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                255,
-                107,
-                0,
-                0.22
-            ),
-            transparent 65%
-        );
-
-    filter:
-        blur(15px);
-
-    z-index:
-        -1;
-
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.home-logo {
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        contain;
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    animation:
-        logoFloat
-        4s
-        ease-in-out
-        infinite;
-
-}
-
-
-/* =========================================================
-   LOGO ANIMATION
-========================================================= */
-
-@keyframes logoFloat {
-
-    0% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-10px);
-
-    }
-
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-/* =========================================================
-   BRAND
-========================================================= */
-
-.home-brand {
-
-    margin-bottom:
-        18px;
-
-}
-
-
-.home-brand h1 {
-
-    font-family:
-        "Anton",
-        sans-serif;
-
-    font-size:
-        clamp(
-            55px,
-            10vw,
-            110px
-        );
-
-    font-weight:
-        400;
-
-    letter-spacing:
-        4px;
-
-    line-height:
-        0.95;
-
-    text-transform:
-        uppercase;
-
-    color:
-        white;
-
-}
-
-
-.home-brand h1 span {
-
-    color:
-        var(--orange);
-
-}
-
-
-/* =========================================================
-   SLOGAN
-========================================================= */
-
-.home-slogan {
-
-    margin-top:
-        5px;
-
-    margin-bottom:
-        35px;
-
-    color:
-        #888;
-
-    font-family:
-        "Orbitron",
-        sans-serif;
-
-    font-size:
-        11px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        3px;
-
-    line-height:
-        1.8;
-
-}
-
-
-/* =========================================================
-   EXPLORE BUTTON
-========================================================= */
-
-.explore-button {
-
-    position:
-        relative;
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
     gap:
-        14px;
-
-    min-height:
-        55px;
-
-    padding:
-        0 28px;
+        25px;
 
     background:
-        var(--orange);
+        #0d0d0d;
 
-    color:
-        #080808;
-
-    border:
+    border-bottom:
         1px solid
-        var(--orange);
+        #242424;
 
-    font-family:
-        "Orbitron",
-        sans-serif;
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transform:
+        translateY(
+            -15px
+        );
+
+    transition:
+        all
+        0.3s ease;
+
+}
+
+
+.nav-menu.active {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    transform:
+        translateY(
+            0
+        );
+
+}
+
+
+.nav-menu a {
 
     font-size:
         10px;
 
-    font-weight:
-        800;
+}
 
-    letter-spacing:
-        1.5px;
 
-    overflow:
-        hidden;
+/* HOME */
 
-    transition:
-        all
-        0.3s
-        ease;
+.home-content {
+
+    padding:
+        90px 20px 70px;
 
 }
 
 
-/* =========================================================
-   BUTTON HOVER LAYER
-========================================================= */
+.home-logo-wrapper {
 
-.explore-button::before {
+    width:
+        140px;
 
-    content:
-        "";
+    height:
+        140px;
 
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        white;
-
-    transform:
-        translateX(-101%);
-
-    transition:
-        transform
-        0.35s
-        ease;
-
-    z-index:
-        0;
+    margin-bottom:
+        28px;
 
 }
 
 
-.explore-button span,
-.explore-button i {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-}
-
-
-.explore-button:hover::before {
-
-    transform:
-        translateX(0);
-
-}
-
-
-.explore-button:hover {
-
-    border-color:
-        white;
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 15px 35px
-        rgba(
-            255,
-            107,
-            0,
-            0.3
-        );
-
-}
-
-
-/* =========================================================
-   BUTTON ICON
-========================================================= */
-
-.explore-button i {
+.home-title {
 
     font-size:
-        11px;
+        clamp(
+            55px,
+            15vw,
+            80px
+        );
 
-    transition:
-        transform
-        0.3s
-        ease;
-
-}
-
-
-.explore-button:hover i {
-
-    transform:
-        translateY(3px);
+    letter-spacing:
+        2px;
 
 }
 
 
-/* =========================================================
-   ABOUT SECTION
-========================================================= */
+.home-slogan {
+
+    max-width:
+        290px;
+
+    margin:
+        22px 0 30px;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.explore-button {
+
+    min-height:
+        52px;
+
+    padding:
+        0 20px;
+
+    gap:
+        10px;
+
+    font-size:
+        8px;
+
+}
+
+
+/* ABOUT */
 
 .about-section {
 
-    position:
-        relative;
-
     padding:
-        140px 25px;
-
-    background:
-        #0b0b0b;
-
-    overflow:
-        hidden;
+        90px 20px;
 
 }
 
 
-/* =========================================================
-   ABOUT BACKGROUND
-========================================================= */
+.about-label {
 
-.about-section::before {
+    font-size:
+        8px;
 
-    content:
-        "";
+    letter-spacing:
+        2px;
 
-    position:
-        absolute;
+}
 
-    top:
-        0;
 
-    left:
-        0;
+.about-title h2 {
 
-    width:
-        100%;
+    font-size:
+        62px;
 
-    height:
-        1px;
+}
 
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            var(--orange),
-            transparent
-        );
 
-    opacity:
-        0.5;
+.about-content p {
+
+    font-size:
+        13px;
+
+}
+
+
+.about-values {
+
+    grid-template-columns:
+        1fr;
+
+    margin-top:
+        60px;
+
+}
+
+
+.about-value {
+
+    padding:
+        22px;
 
 }
 
 
 .about-section::after {
 
-    content:
-        "AGILITY";
-
-    position:
-        absolute;
-
-    right:
-        -40px;
-
-    bottom:
-        -80px;
-
-    font-family:
-        "Anton",
-        sans-serif;
-
     font-size:
-        220px;
-
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.015
-        );
-
-    pointer-events:
-        none;
+        130px;
 
 }
 
 
-/* =========================================================
-   ABOUT CONTAINER
-========================================================= */
+/* FOOTER */
 
-.about-container {
+.footer {
 
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    width:
-        min(
-            1150px,
-            100%
-        );
-
-    margin:
-        auto;
+    padding:
+        50px 20px 25px;
 
 }
 
 
-/* =========================================================
-   SECTION LABEL
-========================================================= */
+.footer-brand {
 
-.section-label {
+    flex-direction:
+        column;
 
-    display:
-        flex;
-
-    align-items:
+    text-align:
         center;
 
-    gap:
-        12px;
-
-    margin-bottom:
-        25px;
-
-    color:
-        var(--orange);
-
-    font-family:
-        "Orbitron",
-        sans-serif;
-
-    font-size:
-        10px;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        3px;
+}
+```
 
 }
 
+/* =========================================================
+SMALL MOBILE
+========================================================= */
 
-.section-label span {
+@media (
+max-width: 400px
+) {
+
+```
+.home-logo-wrapper {
 
     width:
-        45px;
+        120px;
 
     height:
-        2px;
-
-    background:
-        var(--orange);
+        120px;
 
 }
 
 
-/* =========================================================
-   ABOUT GRID
-========================================================= */
+.home-title {
 
-.about-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
-
-    gap:
-        100px;
-
-    align-items:
-        start;
+    font-size:
+        52px;
 
 }
 
 
-/* =========================================================
-   ABOUT TITLE
-========================================================= */
+.explore-button {
+
+    width:
+        100%;
+
+    max-width:
+        280px;
+
+}
+
 
 .about-title h2 {
 
-    font-family:
-        "Anton",
-        sans-serif;
-
     font-size:
-        clamp(
-            55px,
-            7vw,
-            95px
-        );
-
-    font-weight:
-        400;
-
-    line-height:
-        0.95;
-
-    letter-spacing:
-        2px;
+        52px;
 
 }
-
-
-.about-title h2 span {
-
-    display:
-        block;
-
-    color:
-        var(--orange);
-
-}
-
-
-/* =========================================================
-   ABOUT TEXT
-========================================================= */
-
-.about-text {
-
-    padding-top:
-        10px;
-
-}
-
-
-.about-text p {
-
-    margin-bottom:
-        22px;
-
-    color:
-        #888;
-
-    font-size:
-        15px;
-
-    line-height:
-        1.9;
-
-}
-
-
-/* =========================================================
-   ABOUT TEXT ACCENT
-========================================================= */
-
-.about-text p:first-child {
-
-    padding-left:
-        22px;
-
-    border-left:
-        2px solid
-        var(--orange);
-
-    color:
-        #aaa;
-
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (
-    max-width: 850px
-) {
-
-    .home-logo-wrapper {
-
-        width:
-            150px;
-
-        height:
-            150px;
-
-    }
-
-
-    .about-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            45px;
-
-    }
-
-
-    .about-section {
-
-        padding:
-            100px 25px;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (
-    max-width: 600px
-) {
-
-    .home-content {
-
-        padding:
-            70px 20px;
-
-    }
-
-
-    .home-logo-wrapper {
-
-        width:
-            120px;
-
-        height:
-            120px;
-
-        margin-bottom:
-            28px;
-
-    }
-
-
-    .home-brand h1 {
-
-        font-size:
-            58px;
-
-        letter-spacing:
-            2px;
-
-    }
-
-
-    .home-slogan {
-
-        max-width:
-            280px;
-
-        font-size:
-            8px;
-
-        letter-spacing:
-            2px;
-
-    }
-
-
-    .explore-button {
-
-        min-height:
-            50px;
-
-        padding:
-            0 20px;
-
-        font-size:
-            8px;
-
-        gap:
-            10px;
-
-    }
-
-
-    .about-section {
-
-        padding:
-            85px 20px;
-
-    }
-
-
-    .section-label {
-
-        font-size:
-            8px;
-
-        letter-spacing:
-            2px;
-
-    }
-
-
-    .about-title h2 {
-
-        font-size:
-            58px;
-
-    }
-
-
-    .about-text p {
-
-        font-size:
-            13px;
-
-    }
-
-
-    .about-section::after {
-
-        font-size:
-            120px;
-
-    }
+```
 
 }
