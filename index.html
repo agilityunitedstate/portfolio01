@@ -1,201 +1,153 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agility United</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black: #0D0D0D;
+    --black-2: #171717;
+    --orange: #FF5A1F;
+    --orange-deep: #B8380F;
+    --cream: #F4EFE6;
+    --muted: #8A867E;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Work Sans', sans-serif;
+    overflow: hidden;
+  }
 
-<!-- Main CSS -->
-<link
-    rel="stylesheet"
-    href="css/style.css"
->
+  .stage{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-<!-- Home CSS -->
-<link
-    rel="stylesheet"
-    href="css/home.css"
->
-```
+  /* diagonal speed lines — motion cue for "agility" */
+  .lines{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+  }
+  .lines span{
+    position:absolute;
+    top:50%;
+    left:50%;
+    height:1px;
+    background: var(--orange-deep);
+    opacity:0.35;
+    transform-origin: left center;
+  }
+  .lines span:nth-child(1){ width:60vmax; transform: translate(-30%,-140px) rotate(-18deg); }
+  .lines span:nth-child(2){ width:75vmax; transform: translate(-30%,-70px) rotate(-18deg); opacity:0.22; }
+  .lines span:nth-child(3){ width:50vmax; transform: translate(-30%,120px) rotate(-18deg); }
+  .lines span:nth-child(4){ width:68vmax; transform: translate(-30%,190px) rotate(-18deg); opacity:0.18; }
 
+  .mark{
+    position: relative;
+    z-index: 2;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    animation: rise 0.7s ease-out both;
+  }
+  .chevron{
+    width: 34px;
+    height: 46px;
+  }
+  .chevron path{ fill: var(--orange); }
+
+  .wordmark{
+    font-family:'Anton', sans-serif;
+    font-size: clamp(40px, 8vw, 88px);
+    letter-spacing: 1px;
+    line-height: 0.95;
+    color: var(--cream);
+  }
+  .wordmark span{ color: var(--orange); }
+
+  .sub{
+    position:relative;
+    z-index:2;
+    margin-top: 10px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    animation: rise 0.7s ease-out 0.1s both;
+  }
+
+  .cta{
+    position:relative;
+    z-index:2;
+    margin-top: 56px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding: 14px 30px;
+    border: 1.5px solid var(--orange);
+    border-radius: 999px;
+    color: var(--cream);
+    text-decoration:none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    animation: rise 0.7s ease-out 0.2s both;
+  }
+  .cta:hover{
+    background: var(--orange);
+    color: var(--black);
+    transform: translateY(-2px);
+  }
+  .cta svg{ width:16px; height:16px; transition: transform 0.25s ease; }
+  .cta:hover svg{ transform: translateX(3px); }
+
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(16px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px){
+    .wordmark{ font-size: 12vw; }
+    .cta{ padding:12px 24px; font-size:14px; }
+  }
+</style>
 </head>
-
 <body>
-
-```
-<!-- ============================= -->
-<!-- HERO / HOME SECTION -->
-<!-- ============================= -->
-
-<section class="home">
-
-    <div class="home-overlay"></div>
-
-
-    <div class="home-content">
-
-        <!-- WEBSITE TITLE -->
-
-        <h1 class="home-title">
-            AGILITY UNITED
-        </h1>
-
-
-        <!-- SLOGAN -->
-
-        <p class="home-slogan">
-            More Than a Team, We Are United
-        </p>
-
-
-        <!-- BUTTON -->
-
-        <a
-            href="#explore"
-            class="explore-button"
-        >
-
-            Explore Agility United
-
-        </a>
-
-
+  <div class="stage">
+    <div class="lines">
+      <span></span><span></span><span></span><span></span>
     </div>
 
-</section>
-
-
-<!-- ============================= -->
-<!-- EXPLORE SECTION -->
-<!-- ============================= -->
-
-<section
-    id="explore"
-    class="explore"
->
-
-    <h2>
-        EXPLORE AGILITY
-    </h2>
-
-
-    <p>
-        Discover our players, divisions,
-        rankings, events, and achievements.
-    </p>
-
-
-    <div class="explore-grid">
-
-
-        <a
-            href="members.html"
-            class="explore-card"
-        >
-
-            <h3>
-                MEMBERS
-            </h3>
-
-            <p>
-                Meet our players
-            </p>
-
-        </a>
-
-
-        <a
-            href="divisions.html"
-            class="explore-card"
-        >
-
-            <h3>
-                DIVISIONS
-            </h3>
-
-            <p>
-                Explore our divisions
-            </p>
-
-        </a>
-
-
-        <a
-            href="ranking.html"
-            class="explore-card"
-        >
-
-            <h3>
-                PLAYER RANKING
-            </h3>
-
-            <p>
-                Check player rankings
-            </p>
-
-        </a>
-
-
-        <a
-            href="events.html"
-            class="explore-card"
-        >
-
-            <h3>
-                EVENTS
-            </h3>
-
-            <p>
-                Discover our events
-            </p>
-
-        </a>
-
-
-        <a
-            href="achievements.html"
-            class="explore-card"
-        >
-
-            <h3>
-                ACHIEVEMENTS
-            </h3>
-
-            <p>
-                Our proud moments
-            </p>
-
-        </a>
-
-
-        <a
-            href="about.html"
-            class="explore-card"
-        >
-
-            <h3>
-                ABOUT US
-            </h3>
-
-            <p>
-                Learn about Agility United
-            </p>
-
-        </a>
-
-
+    <div class="mark">
+      <svg class="chevron" viewBox="0 0 34 46" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 0 L34 23 L2 46 L2 32 L18 23 L2 14 Z"/>
+      </svg>
+      <div class="wordmark">AGILITY<br><span>UNITED</span></div>
     </div>
 
-</section>
-```
+    <div class="sub">CEPAT &nbsp;·&nbsp; LINCAH &nbsp;·&nbsp; BERSATU</div>
 
+    <a class="cta" href="#" aria-label="Explore Agility United">
+      Explore Agility United
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
 </body>
-
 </html>
