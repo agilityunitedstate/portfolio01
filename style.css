@@ -1,0 +1,307 @@
+/* =========================================
+   AGILITY UNITED LANDING PAGE
+========================================= */
+
+.landing-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #0b0d0f;
+}
+
+
+/* =========================================
+   BACKGROUND DIAGONAL LINES
+========================================= */
+
+.landing-lines {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.landing-lines span {
+    position: absolute;
+
+    width: 130%;
+
+    height: 1px;
+
+    background: rgba(255, 92, 32, 0.35);
+
+    transform: rotate(-18deg);
+
+    left: -15%;
+}
+
+
+/* LINE POSITION */
+
+.landing-lines span:nth-child(1) {
+
+    top: 8%;
+
+}
+
+
+.landing-lines span:nth-child(2) {
+
+    top: 32%;
+
+}
+
+
+.landing-lines span:nth-child(3) {
+
+    top: 63%;
+
+}
+
+
+.landing-lines span:nth-child(4) {
+
+    top: 87%;
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.landing-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.landing-logo {
+
+    width: min(460px, 80vw);
+
+    margin-bottom: 20px;
+
+}
+
+
+.landing-logo img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================
+   SLOGAN
+========================================= */
+
+.landing-slogan {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 0 0 80px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 8px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+}
+
+
+.landing-slogan span {
+
+    color: #ff5c20;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   EXPLORE BUTTON
+========================================= */
+
+.explore-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    min-width: 370px;
+
+    padding: 20px 35px;
+
+    border: 2px solid #ff5c20;
+
+    border-radius: 60px;
+
+    color: #f5f5f5;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.explore-button i {
+
+    font-size: 20px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.explore-button:hover {
+
+    background: #ff5c20;
+
+    color: #ffffff;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(255, 92, 32, 0.25);
+
+}
+
+
+.explore-button:hover i {
+
+    transform: translateX(8px);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+
+    .landing-logo {
+
+        width: min(350px, 85vw);
+
+    }
+
+
+    .landing-slogan {
+
+        font-size: 11px;
+
+        letter-spacing: 5px;
+
+        gap: 10px;
+
+        margin-bottom: 60px;
+
+    }
+
+
+    .explore-button {
+
+        min-width: 280px;
+
+        padding: 17px 25px;
+
+        font-size: 16px;
+
+        gap: 15px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+
+    .landing-logo {
+
+        width: 90vw;
+
+    }
+
+
+    .landing-slogan {
+
+        letter-spacing: 3px;
+
+        font-size: 9px;
+
+        gap: 8px;
+
+    }
+
+
+    .explore-button {
+
+        width: 90%;
+
+        min-width: unset;
+
+        font-size: 15px;
+
+    }
+
+}
